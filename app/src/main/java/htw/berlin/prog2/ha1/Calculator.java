@@ -15,6 +15,8 @@ public class Calculator {
 
     private String latestOperation = "";
 
+    private Double lastOperand = null;
+
     /**
      * @return den aktuellen Bildschirminhalt als String
      */
@@ -46,6 +48,8 @@ public class Calculator {
      * im Ursprungszustand ist.
      */
     public void pressClearKey() {
+
+
         screen = "0";
         latestOperation = "";
         latestValue = 0.0;
@@ -132,3 +136,12 @@ public class Calculator {
         if(screen.contains(".") && screen.length() > 11) screen = screen.substring(0, 10);
     }
 }
+
+
+
+
+
+
+
+
+
