@@ -128,7 +128,7 @@ class CalculatorTest {
     }
 
     @Test
-    @DisplayName("should repeat last operation on repeated equals press")
+    @DisplayName("should only clear the last digit (C funktion)")
     void testClearKey() {
         Calculator calc = new Calculator();
 
