@@ -17,6 +17,8 @@ public class Calculator {
 
     private Double lastOperand = null;
 
+    private boolean clearKeyPress = false;
+
     /**
      * @return den aktuellen Bildschirminhalt als String
      */
@@ -49,10 +51,17 @@ public class Calculator {
      */
     public void pressClearKey() {
 
+        if(!clearKeyPress){
+         screen = "0";
+         clearKeyPress = true;
 
-        screen = "0";
-        latestOperation = "";
-        latestValue = 0.0;
+        }else{
+            screen = "0";
+            latestOperation = "";
+            latestValue = 0.0;
+
+        }
+
     }
 
     /**
