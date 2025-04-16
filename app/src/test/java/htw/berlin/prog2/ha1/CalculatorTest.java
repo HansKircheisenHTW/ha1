@@ -128,7 +128,7 @@ class CalculatorTest {
     }
 
     @Test
-    @DisplayName("should only clear the last digit (C funktion)")
+    @DisplayName("should only clear the current screen not lastValue (C funktion)")
     void testClearKey() {
         Calculator calc = new Calculator();
 
@@ -139,6 +139,7 @@ class CalculatorTest {
         calc.pressClearKey();
         calc.pressDigitKey(1);
         calc.pressEqualsKey();
+
 
 
 

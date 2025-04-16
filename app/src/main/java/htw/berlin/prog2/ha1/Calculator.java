@@ -15,9 +15,9 @@ public class Calculator {
 
     private String latestOperation = "";
 
-    private Double lastOperand = null;
+    private Double lastOperand = null; //ChatGPT liefert Ansatz
 
-    private boolean clearKeyPress = false;
+    private boolean clearKeyPressed = false;
 
     /**
      * @return den aktuellen Bildschirminhalt als String
@@ -51,14 +51,15 @@ public class Calculator {
      */
     public void pressClearKey() {
 
-        if(!clearKeyPress){
+        if(!clearKeyPressed){
          screen = "0";
-         clearKeyPress = true;
+         clearKeyPressed = true;
 
         }else{
             screen = "0";
             latestOperation = "";
             latestValue = 0.0;
+            clearKeyPressed = false;
 
         }
 
@@ -131,13 +132,7 @@ public class Calculator {
      * Operation (ggf. inklusive letztem Operand) erneut auf den aktuellen Bildschirminhalt angewandt
      * und das Ergebnis direkt angezeigt.
      */
-    public void pressEqualsKey() {
-
-        if (latestOperation == null || latestOperation.isEmpty()) {
-            return;
-        }
-
-
+       public void pressEqualsKey() {
 
         if (lastOperand == null) {
             lastOperand = Double.parseDouble(screen);
@@ -164,6 +159,10 @@ public class Calculator {
 
 
 }
+
+
+
+
 
 
 
